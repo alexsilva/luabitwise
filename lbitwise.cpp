@@ -5,7 +5,7 @@
 #include "lbitwise.h"
 
 static void b_arshift(void) {
-
+    lua_error((char *) "b_arshift: not implemented!");
 }
 
 /* bit and
@@ -52,7 +52,7 @@ static void b_xor(void) {
 }
 
 static void b_lrot(void) {
-
+    lua_error((char *) "b_lrot: not implemented!");
 }
 
 /* bit lshift
@@ -67,7 +67,7 @@ static void b_lshift(void) {
 }
 
 static void b_rrot(void) {
-
+    lua_error((char *) "b_rrot: not implemented!");
 }
 
 /* bit rshift
