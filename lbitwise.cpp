@@ -82,15 +82,15 @@ static void b_rshift(void) {
 }
 
 static struct luaL_reg bitlib[] = {
-    {(char *) "arshift", b_arshift},
+    {(char *) "barshift", b_arshift},
     {(char *) "band",    b_and},
     {(char *) "bnot",    b_not},
     {(char *) "bor",     b_or},
     {(char *) "bxor",    b_xor},
-    {(char *) "lrotate", b_lrot},
-    {(char *) "lshift",  b_lshift},
-    {(char *) "rrotate", b_rrot},
-    {(char *) "rshift",  b_rshift}
+    {(char *) "blrotate", b_lrot},
+    {(char *) "blshift",  b_lshift},
+    {(char *) "brrotate", b_rrot},
+    {(char *) "brshift",  b_rshift}
 };
 
 
