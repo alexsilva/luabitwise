@@ -55,16 +55,30 @@ static void b_lrot(void) {
 
 }
 
+/* bit lshift
+ *
+ * a << b
+ *
+ * */
 static void b_lshift(void) {
-
+    int a = luaL_check_int(1);
+    int b = luaL_check_int(2);
+    lua_pushnumber(a << b);
 }
 
 static void b_rrot(void) {
 
 }
 
+/* bit rshift
+ *
+ * a >> b
+ *
+ * */
 static void b_rshift(void) {
-
+    int a = luaL_check_int(1);
+    int b = luaL_check_int(2);
+    lua_pushnumber(a >> b);
 }
 
 static struct luaL_reg bitlib[] = {
