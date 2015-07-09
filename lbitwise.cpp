@@ -19,8 +19,14 @@ static void b_and(void) {
     lua_pushnumber(a & b);
 }
 
+/* bit not
+ *
+ * ~a
+ *
+ * */
 static void b_not(void) {
-
+    int a = luaL_check_int(1);
+    lua_pushnumber(~a);
 }
 
 static void b_or(void) {
