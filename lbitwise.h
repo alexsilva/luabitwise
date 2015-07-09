@@ -12,7 +12,7 @@ extern "C" {
     #include "lauxlib.h"
     #include "lualib.h"
 
-    void DLL_EXPORT lua_bitwiseopen(lua_State *L);
+    void DLL_EXPORT lua_lbitwiseopen(lua_State *L);
 }
 
 #endif //LUA_BITWASE_H

@@ -94,7 +94,7 @@ static struct luaL_reg bitlib[] = {
 };
 
 
-void DLL_EXPORT lua_bitwiseopen(lua_State *L) {
+void DLL_EXPORT lua_lbitwiseopen(lua_State *L) {
     lua_state = L;
     luaL_openlib(bitlib, (sizeof(bitlib) / sizeof(bitlib[0])));
 }
