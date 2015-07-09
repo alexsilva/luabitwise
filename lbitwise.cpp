@@ -8,8 +8,15 @@ static void b_arshift(void) {
 
 }
 
+/* bit and
+ *
+ * a & b
+ *
+ * */
 static void b_and(void) {
-
+    int a = luaL_check_int(1);
+    int b = luaL_check_int(2);
+    lua_pushnumber(a & b);
 }
 
 static void b_not(void) {
