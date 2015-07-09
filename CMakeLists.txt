@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.2)
-project(bit32)
+project(lbitwise)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
@@ -14,10 +14,10 @@ set(LIBRARIES
 )
 
 set(SOURCE_FILES
-    bitwase.cpp
-    bitwase.h
+    lbitwise.cpp
+    lbitwise.h
 )
 
 
-add_library(bit32 SHARED ${SOURCE_FILES})
-target_link_libraries(bit32 ${LIBRARIES})
+add_library(lbitwise SHARED ${SOURCE_FILES})
+target_link_libraries(lbitwise ${LIBRARIES})
