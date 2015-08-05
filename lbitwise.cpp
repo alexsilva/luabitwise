@@ -4,8 +4,8 @@
 
 #include "lbitwise.h"
 
-static void b_arshift(void) {
-    lua_error((char *) "b_arshift: not implemented!");
+static void b_arshift(lua_State *L) {
+    lua_error(L, (char *) "b_arshift: not implemented!");
 }
 
 /* bit and
@@ -13,10 +13,10 @@ static void b_arshift(void) {
  * a & b
  *
  * */
-static void b_and(void) {
-    int a = luaL_check_int(1);
-    int b = luaL_check_int(2);
-    lua_pushnumber(a & b);
+static void b_and(lua_State *L) {
+    int a = luaL_check_int(L, 1);
+    int b = luaL_check_int(L, 2);
+    lua_pushnumber(L, a & b);
 }
 
 /* bit not
@@ -24,9 +24,9 @@ static void b_and(void) {
  * ~a
  *
  * */
-static void b_not(void) {
-    int a = luaL_check_int(1);
-    lua_pushnumber(~a);
+static void b_not(lua_State *L) {
+    int a = luaL_check_int(L, 1);
+    lua_pushnumber(L, ~a);
 }
 
 /* bit or
@@ -34,10 +34,10 @@ static void b_not(void) {
  * a | b
  *
  * */
-static void b_or(void) {
-    int a = luaL_check_int(1);
-    int b = luaL_check_int(2);
-    lua_pushnumber(a | b);
+static void b_or(lua_State *L) {
+    int a = luaL_check_int(L, 1);
+    int b = luaL_check_int(L, 2);
+    lua_pushnumber(L, a | b);
 }
 
 /* bit xor
@@ -45,14 +45,14 @@ static void b_or(void) {
  * a ^ b
  *
  * */
-static void b_xor(void) {
-    int a = luaL_check_int(1);
-    int b = luaL_check_int(2);
-    lua_pushnumber(a ^ b);
+static void b_xor(lua_State *L) {
+    int a = luaL_check_int(L, 1);
+    int b = luaL_check_int(L, 2);
+    lua_pushnumber(L, a ^ b);
 }
 
-static void b_lrot(void) {
-    lua_error((char *) "b_lrot: not implemented!");
+static void b_lrot(lua_State *L) {
+    lua_error(L, (char *) "b_lrot: not implemented!");
 }
 
 /* bit lshift
@@ -60,14 +60,14 @@ static void b_lrot(void) {
  * a << b
  *
  * */
-static void b_lshift(void) {
-    int a = luaL_check_int(1);
-    int b = luaL_check_int(2);
-    lua_pushnumber(a << b);
+static void b_lshift(lua_State *L) {
+    int a = luaL_check_int(L, 1);
+    int b = luaL_check_int(L, 2);
+    lua_pushnumber(L, a << b);
 }
 
-static void b_rrot(void) {
-    lua_error((char *) "b_rrot: not implemented!");
+static void b_rrot(lua_State *L) {
+    lua_error(L, (char *) "b_rrot: not implemented!");
 }
 
 /* bit rshift
@@ -75,10 +75,10 @@ static void b_rrot(void) {
  * a >> b
  *
  * */
-static void b_rshift(void) {
-    int a = luaL_check_int(1);
-    int b = luaL_check_int(2);
-    lua_pushnumber(a >> b);
+static void b_rshift(lua_State *L) {
+    int a = luaL_check_int(L, 1);
+    int b = luaL_check_int(L, 2);
+    lua_pushnumber(L, a >> b);
 }
 
 static struct luaL_reg bitlib[] = {
@@ -95,6 +95,5 @@ static struct luaL_reg bitlib[] = {
 
 
 LUA_LIBRARY void lua_lbitwiseopen(lua_State *L) {
-    lua_state = L;
-    luaL_openlib(bitlib, (sizeof(bitlib) / sizeof(bitlib[0])));
+    luaL_openlib(L, bitlib, (sizeof(bitlib) / sizeof(bitlib[0])));
 }
