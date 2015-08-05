@@ -5,12 +5,6 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
 include_directories(
     ${LUA_DIR}/include
-    ${LUA_DIR}/src
-)
-
-set(LIBRARIES
-    ${LUA_DIR}/lib/mingw3/liblua.a
-    ${LUA_DIR}/lib/mingw3/liblualib.a
 )
 
 set(SOURCE_FILES
@@ -20,4 +14,5 @@ set(SOURCE_FILES
 
 
 add_library(lbitwise SHARED ${SOURCE_FILES})
-target_link_libraries(lbitwise ${LIBRARIES})
+target_link_libraries(lbitwise ${LUA_LIB})
+set_target_properties(lbitwise PROPERTIES COMPILE_FLAGS "-m32" LINK_FLAGS "-m32")
