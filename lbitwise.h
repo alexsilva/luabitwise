@@ -13,12 +13,10 @@
     #define LUA_LIBRARY __attribute__((visibility("default")))
 #endif
 
-extern "C" {
-    #include "lua.h"
-    #include "lauxlib.h"
-    #include "lualib.h"
+#include "lua.h"
+#include "lauxlib.h"
+#include "lualib.h"
 
-    LUA_LIBRARY void lua_lbitwiseopen(lua_State *L);
-}
+LUA_LIBRARY void lua_lbitwiseopen(lua_State *L);
 
 #endif //LUA_BITWASE_H

@@ -5,7 +5,7 @@
 #include "lbitwise.h"
 
 static void b_arshift(lua_State *L) {
-    lua_error(L, (char *) "b_arshift: not implemented!");
+    lua_error(L, "b_arshift: not implemented!");
 }
 
 /* bit and
@@ -52,7 +52,7 @@ static void b_xor(lua_State *L) {
 }
 
 static void b_lrot(lua_State *L) {
-    lua_error(L, (char *) "b_lrot: not implemented!");
+    lua_error(L, "b_lrot: not implemented!");
 }
 
 /* bit lshift
@@ -67,7 +67,7 @@ static void b_lshift(lua_State *L) {
 }
 
 static void b_rrot(lua_State *L) {
-    lua_error(L, (char *) "b_rrot: not implemented!");
+    lua_error(L, "b_rrot: not implemented!");
 }
 
 /* bit rshift
@@ -82,15 +82,15 @@ static void b_rshift(lua_State *L) {
 }
 
 static struct luaL_reg bitlib[] = {
-    {(char *) "barshift", b_arshift},
-    {(char *) "band",    b_and},
-    {(char *) "bnot",    b_not},
-    {(char *) "bor",     b_or},
-    {(char *) "bxor",    b_xor},
-    {(char *) "blrotate", b_lrot},
-    {(char *) "blshift",  b_lshift},
-    {(char *) "brrotate", b_rrot},
-    {(char *) "brshift",  b_rshift}
+    {"barshift", b_arshift},
+    {"band",     b_and},
+    {"bnot",     b_not},
+    {"bor",      b_or},
+    {"bxor",     b_xor},
+    {"blrotate", b_lrot},
+    {"blshift",  b_lshift},
+    {"brrotate", b_rrot},
+    {"brshift",  b_rshift}
 };
 
 
